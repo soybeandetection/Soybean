@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: lavender;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+}
+.nav_bar .logo a{
+  text-decoration: none;
+  color: white;
+}
+.nav_bar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  justify-content: space-between;
+  align-items: center;
+  background: #6b8e23;
+  color: #ffffff;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 20px;
+  margin: 10px;
+}
+.logo a {
+  text-decoration: none;
+  color: #ffffff;
+  margin-left: 20px;
+}
+.navbar-links ul {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+}
+.navbar-links ul li {
+  list-style: none;
+}
+.navbar-links ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 20px;
+  display: block;
+}
+.navbar-links ul li a:hover {
+  background: #ddecd3;
+  color: #000000;
+}
+.togglebtn {
+  position: absolute;
+  top: 14px;
+  right: 22px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+}
+.line {
+  height: 3px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .togglebtn {
+    display: flex;
+  }
+  .navbar-links {
+    display: none;
+    width: 100%;
+  }
+  .nav_bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar-links ul {
+    width: 100%;
+    flex-direction: column;
+  }
+  .navbar-links ul li {
+    text-align: center;
+  }
+  .navbar-links ul li a {
+    padding: 16px;
+    text-align: left;
+  }
+  .navbar-links.active {
+    display: flex;
+  }
+}
+/*=-----------------------*/
+/* Style the header */
+.banner_section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  height: 300px;
+  object-fit: cover;
+  object-position: top;
+  background-color: #67a35f;
+  background-image: url("../ii.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.banner_section h2{
+  color: #002699;
+  font-size: 35px;
+  font-weight: 600;
+}
+@media only screen and (max-width: 600px) {
+.banner_section{
+  height: 230px;
+}
+.banner_section h2{
+  font-size: 30px;
+}
+}
+@media only screen and (max-width: 600px) {
+  .banner_section h2{
+    font-size: 25px;
+  }
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Index | Soybean</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../static/css/nav_bar.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/chart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+    video{
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+  </head>
+<body>
+<!-------------|Navigation bar|------------->
+<header>
+  <nav class="nav_bar">
+    <div class="logo"><a href="index">Soybean</a></div>
+        <a class="togglebtn" href="#">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </a>
+    <div class="navbar-links">
+        <ul>
+            <li><a href="home">Home</a></li>
+            <li><a href="index">Modeling</a></li>
+            <li><a href="analytics">Analytics</a></li>
+        </ul>
+    </div>
+  </nav>
+</header>
+<!---------|Front Banner Section|------------>
+<header class="banner_section">
+  <h2>Soybean</h2>
+</header>
+<!-----------------------|Main Container|----------------------------> 
+<div class="container">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-md-6 my-5">
+            <form action="/predict" method="post" enctype="multipart/form-data" onsubmit="showloading()">
+              <br><br><br>
+
+                <div class="form-check form-check-inline">
+                    <input class="radio-input form-check-input" type="radio" name="model_name" id="inlineRadio1" value="pod">
+                    <label class="form-check-label radio-label" for="inlineRadio1"><span class="radio-border"></span> POD </label></label>
+                </div>
+                
+                <div class="form-check form-check-inline">
+                    <input class="radio-input form-check-input" type="radio" name="model_name" id="inlineRadio2" value="leaf">
+                    <label class="form-check-label radio-label" for="inlineRadio2"><span class="radio-border"></span> LEAF </label></label>
+                </div>
+                
+                <div class="form-check form-check-inline">
+                    <input class="radio-input form-check-input" type="radio" name="model_name" id="inlineRadio3" value="flower">
+                    <label class="form-check-label radio-label" for="inlineRadio3"><span class="radio-border"></span> FLOWER </label></label></label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="radio-input form-check-input" type="radio" name="model_name" id="inlineRadio4" value="leaf pod flower">
+                    <label class="form-check-label radio-label" for="inlineRadio4"><span class="radio-border"></span> ALL </label></label></label>
+                </div>
+
+                <div class="custom-file mb-3 mt-4">
+                    <input type="file" class="custom-file-input upload" id="customFile" name="image">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
+              <!-- <input type="file" name="image" class="upload"> -->
+                <br>
+                <input type="submit" value="Predict">      
+            </form> 
+          </div> 
+        <div class="col-md-6 video mt-3">
+          <video autoplay muted loop id="bg-video"> 
+            <source src="../static/Bean_Trim.mp4" type="video/mp4">
+            <source src="../static/Bean_Trim.mp4" type="video/ogg">
+          </video>
+        </div>
+    </div>
+</div>      
+<!-- -------------------------------------------->  
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-6"> 
+          <h4 style="color: saddlebrown;"><b>Soybean Pod</b></h4>
+          <p>One or two weeks after the first flowers, the first seed pods appear, with most pods being set within the next three weeks. Inside the pod, three (or sometimes four) tiny seeds begin to grow and develop. For the next 30 to 40 days, the seeds rapidly fill with food produced in the leaves. The seed-filling period is the most critical in the life of the soybean plant with regard to yield. If weather conditions are adverse, such as drought stress or leaf loss from hail, yields will be cut severely. 
+          </p>
+      </div>
+    <div class="col-md-6">
+      <h4 style="color: saddlebrown;"><b>Soybean Flowering</b></h4>
+      <p> In typical soybean plants, after six to ten trifoliate leaves have grown, the next main stage in the plant’s life begins, the reproductive period. From 3 to 15 flower buds develop at each node of the stem. There are two main types of soybean, depending on how flowering occurs. Varieties called indeterminate continue growing upward at the tip of the stem for several weeks after flowering begins lower on the stem. Upper nodes will not flower until later.
+      </p>
+    </div>   
+  </div> 
+</div>
+<!-- ------------------- -->
+<script>
+var vid = document.getElementById("bg-video");
+vid.playbackRate = 4.5;
+
+const toggleBtn = document.getElementsByClassName('togglebtn')[0]
+const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+toggleBtn.addEventListener('click', () => {
+    navbarLinks.classList.toggle('active')
+});
+</script>  
+<script>
+$(".custom-file-input").on("change", function() {
+  var fileName = $(this).val().split("\\").pop();
+  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
+</script> 
+</body>
+</html>
+
+
+
+

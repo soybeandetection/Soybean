@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+
+}
+
+.body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+
+}
+
+/* Style the header */
+.header {
+  background-color: #67a35f;
+  background-image: url("../static/ii.jpg");
+  background-position: center;
+  background-size: cover;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+/* Create two columns/boxes that floats next to each other */
+.nav {
+  float: left;
+  width: 15%;
+  background: #5f86a3;
+  padding: 80px;
+  line-height: 62px;
+  padding-bottom: 109px;
+}
+
+/* Style the list inside the menu */
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav li {
+  list-style-type: none;
+  padding: 10px;
+}
+
+.a:link ,.a:hover{
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+ /* height: 300px; /* only for demonstration, should be removed */
+}
+
+
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+.@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}

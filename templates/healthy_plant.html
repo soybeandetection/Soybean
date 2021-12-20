@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Healthy Plant | Soyabean</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../static/css/nav_bar.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/chart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+<body>
+<!-------------|Navigation bar|------------->
+<header>
+  <nav class="nav_bar">
+    <div class="logo"><a href="index">Soybean</a></div>
+        <a class="togglebtn" href="#">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </a>
+    <div class="navbar-links">
+        <ul>
+            <li><a href="home">Home</a></li>
+            <li><a href="index">Modeling</a></li>
+            <li><a href="analytics">Analytics</a></li>
+        </ul>
+    </div>
+  </nav>
+</header>
+<!---------|Front Banner Section|------------>
+<header class="banner_section">
+  <h2>Soybean - Healthy Plant</h2>
+</header>
+<!-----------------------|Main Container|----------------------------> 
+<div class="container my-5">
+    <div class="row mb-5">
+        <div class="col-md-6 pt-2">
+            <span class="pt-2">
+                <img src="{{ user_image }}" alt="User Image" class="img-thumbnail" width="500" height="600">
+            </span>
+        </div>
+        <div class="col-md-6 mt-4">
+               <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Class</th>
+                    <th>Result</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>Predicted Output</td>
+                  <td>{{pred_output}}</td>
+                </tr>
+                </tbody>
+              </table>  
+              <div class="mt-4">
+                <a href="/home"  class="btn btn-primary">Home</a>
+                <a href="/index"  class="btn btn-primary">Model</a>    
+              </div>
+          </div>
+        </div>
+        </div>
+    </div>
+<!-- ------------------- -->
+<script>
+const toggleBtn = document.getElementsByClassName('togglebtn')[0]
+const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+toggleBtn.addEventListener('click', () => {
+    navbarLinks.classList.toggle('active')
+});
+</script>  
+</body>
+</html>
+
+
+
+

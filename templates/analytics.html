@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Analytics | Soybean</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../static/css/nav_bar.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/chart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+      .reproductive_image img{
+        max-width: 100%;
+        margin: auto;
+        height: auto;
+      }
+      .soybean_maturity img{
+        max-width: 100%;
+        height: auto;
+        margin: auto;
+      }
+    </style>
+  </head>
+<body>
+<!-------------|Navigation bar|------------->
+<header>
+  <nav class="nav_bar">
+    <div class="logo"><a href="index">Soybean</a></div>
+        <a class="togglebtn" href="#">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </a>
+    <div class="navbar-links">
+        <ul>
+            <li><a href="home">Home</a></li>
+            <li><a href="index">Modeling</a></li>
+            <li><a href="analytics">Analytics</a></li>
+        </ul>
+    </div>
+  </nav>
+</header>
+<!---------|Front Banner Section|------------>
+<header class="banner_section">
+  <h2>Soybean  - Analytics view</h2>
+</header>
+<!-----------------------|Main Container|----------------------------> 
+<div class="container my-4">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="analytics_heading text-center">
+          <h4 class="mb-5">Analytical View</h4>
+      </div>
+    </div>
+  </div>
+  <div class="form">
+   <form action="{{ url_for('plot')}}"method="post" target="_self" >
+      <div class="form_class mb-3">
+          <input type="checkbox" class="switch" id="R2" name="R2" value="R2" size="90">
+          <label for="R2">R2 stage</label>
+          <input type="checkbox" class="switch" id="R3" name="R3" value="R3">
+          <label for="R3"> R3 Stage</label>
+          <input type="checkbox" class="switch" id="R4" name="R4" value="R4">
+          <label for="R4"> R4 Stage</label>
+          <input type="checkbox" class="switch" id="R5" name="R5" value="R5">
+          <label for="R4"> R5 Stage</label>
+      </div>
+    <div class="text-center">
+        <input class="btn" type="submit" value="Plot">
+    </div>
+   </form> 
+  </div>
+</div>
+<!-- ----------------------------------------------- -->
+<div class="container">
+  <div class="row pt-5 mb-3 justify-content-center align-items-center">
+    <div class="col-md-10 reproductive_image">
+      <img src="../static/soybean-r.png" alt="Soybean Img">
+    </div>
+</div>
+<div class="row my-5 soybean_maturity justify-content-center align-items-center">
+  <div class="col-md-6">
+    <h4 class="mb-4" style="color: saddlebrown;"><b>Soybean Maturity</b></h4>
+    <p>The newly formed seeds contain about 90% moisture. As the seeds fill with food, moisture content decreases to about 60 to 65%. When seeds are mature (filled), the moisture content is 45 to 55% and the pods and stems of the plant are yellow or brown. The mature seed itself will also be completely yellow when mature (if it is a yellow-seeded variety).In warm, dry weather, seed moisture will continue to drop to about 13 to 14%, when the crop can be harvested. In some varieties especially, the dying plants tend to lodge, making harvesting difficult, and in some varieties, pods tend to split open (shatter), dropping the seed and reducing harvestable yield. As soybean seeds lose moisture they change from large, kidney bean shaped to smaller and nearly round.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <img src="../static/Soybean.png" alt="Soybean Img" height="400">
+  </div>
+</div>
+</div>
+
+
+<script>
+const toggleBtn = document.getElementsByClassName('togglebtn')[0]
+const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+toggleBtn.addEventListener('click', () => {
+    navbarLinks.classList.toggle('active')
+});
+</script>   
+</body>
+</html>

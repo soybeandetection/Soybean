@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Home | Soybean</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../static/css/nav_bar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+      .card_container .card{
+          transition: 0.8s all;
+      }
+      .card_container .card:hover{
+          transform: scale(1.03);
+      }
+    </style>
+  </head>
+<body>
+<!-------------|Navigation bar|------------->
+<header>
+  <nav class="nav_bar">
+    <div class="logo"><a href="index">Soybean</a></div>
+        <a class="togglebtn" href="#">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </a>
+    <div class="navbar-links">
+        <ul>
+            <li><a href="home">Home</a></li>
+            <li><a href="index">Modeling</a></li>
+            <li><a href="analytics">Analytics</a></li>
+        </ul>
+    </div>
+  </nav>
+</header>
+<!---------|Front Banner Section|------------>
+<header class="banner_section">
+  <h2>Soybean - Home</h2>
+</header>
+<!-----------------------|Main Container|---------------------------->  
+<div class="container pb-5">
+  <div class="row">
+    <div class="col-md-12 pt-5 pb-2">
+      <h4 style="color: saddlebrown;"><b>Description</b></h4>
+      <p>Soybean, Glycine max, is an herbaceous annual plant in the family Fabaceae grown for its edible seeds. The soybean plant is usually an erect bush with woody stems and alternately arranged leaves. The leaves possess three individual leaflets which are oval or lance-like in shape, growing to a length of 3–10 cm (1.2–4.0 in). The soybean plant produces small white or purple flowers and curved seed pods which are 3–15 cm (1.2–6 in) in length and can contain between 1 and 5 seeds. The seeds can be a variety of colors including yellow, green, brown, black or a mottled combination. Soybean is an annual plant, surviving only one growing season and can reach heights of 0.2–1.5 m (0.7–1.4 ft)</p>
+    </div>
+    <div class="col-md-12">
+          <h4 style="color: saddlebrown;"><b>Growth stages</b></h4>
+          <p>Reproductive (R) stages: From flowering through maturation</p>
+          <table>
+            <tr>
+              <th style="color:#666699;"><b>Stage</b></th>
+              <th style="color:#666699;">Description </th>
+           </tr>
+           <tr>
+             <td style="color: #800080"><b>R2</b></td>
+             <td>R2Full bloom: Open flower at one of the two uppermost nodes on the main stem with a fully developed flower.</td>
+          </tr>
+          <tr>
+            <td style="color: #800080"><b>R4</b></td>
+            <td>Full pod: Three-quarter-inch-long pod at one of the four uppermost nodes on the main stem with a fully developed leaf.
+            </td>
+          </tr>
+          <tr>
+            <td style="color: #800080"><b>R6</b></td>
+            <td>Full seed: Pod containing a green seed that fills the pod cavity at one of the four uppermost nodes on the main stem with a fully developed leaf.</td>
+           </tr>
+           <tr>
+            <td style="color: #800080"><b>R8</b></td>
+            <td>Full maturity: 95 percent of the pods have reached their mature pod color. After R8, five to 10 days of drying weather are required to reduce soybean moisture levels to less than 15 percent
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>  
+<div class="container mt-2 mb-5">
+  <div class="row card_container">
+    <div class="col-md-4 d-flex justify-content-center mb-2">
+        <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="../static/images/flower.jpg" alt="images">
+            <div class="card-body">
+                <h5 class="card-title">Flower</h5>
+                <p class="card-text">Full bloom: Open flower at one of the two uppermost nodes on the main stem with a fully developed flower.
+                </p>
+                <a href="/index" class="btn btn-outline-primary btn-sm">Check Model</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 d-flex justify-content-center mb-2">
+        <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="../static/images/leaf.jpg" alt="images">
+
+            <div class="card-body">
+                <h5 class="card-title">Leaf</h5>
+                <p class="card-text">First node: Fully developed leaves at unifoliolate node.V(n)  nth-node: The “n” represents the number of nodes on the main stem with fully developed leaves, beginning with the unifoliolate leaves.</p>
+                <a href="/index" class="btn btn-outline-primary btn-sm">Check Model</a>           
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex justify-content-center mb-2">
+          <div class="card" style="width: 20rem;">
+              <img class="card-img-top" src="../static/images/pod.jpg" alt="card image cap">
+  
+              <div class="card-body">
+                  <h5 class="card-title">Pod</h5>
+                  <p class="card-text">Beginning maturity: One normal pod on the main stem that has reached its mature pod color.</p>
+                  <a href="/index" class="btn btn-outline-primary btn-sm">Check Model</a>
+                    </div>
+          </div>
+        </div>
+    </div>
+</div>  
+<script>
+const toggleBtn = document.getElementsByClassName('togglebtn')[0]
+const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+toggleBtn.addEventListener('click', () => {
+    navbarLinks.classList.toggle('active')
+});
+</script>   
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <title>Chart | Soybean</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../static/css/nav_bar.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/chart.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <link href="https://cdn.pydata.org/bokeh/release/bokeh-2.4.1.min.css" rel="stylesheet" type="text/css">
+      <link href="https://cdn.pydata.org/bokeh/release/bokeh-widgets-2.4.1.min.css" rel="stylesheet" type="text/css">
+      <link href="https://cdn.pydata.org/bokeh/release/bokeh-tables-2.4.1.min.css" rel="stylesheet" type="text/css">
+      <script src="https://cdn.pydata.org/bokeh/release/bokeh-2.4.1.min.js"></script>
+      <script src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-2.4.1.min.js"></script>
+      <script src="https://cdn.pydata.org/bokeh/release/bokeh-tables-2.4.1.min.js"></script>
+  </head>
+<body>
+<!-------------|Navigation bar|------------->
+<header>
+  <nav class="nav_bar">
+    <div class="logo"><a href="index">Soybean</a></div>
+        <a class="togglebtn" href="#">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </a>
+    <div class="navbar-links">
+        <ul>
+            <li><a href="home">Home</a></li>
+            <li><a href="index">Modeling</a></li>
+            <li><a href="analytics">Analytics</a></li>
+        </ul>
+    </div>
+  </nav>
+</header>
+<!---------|Front Banner Section|------------>
+<header class="banner_section">
+  <h2>Soybean - Chart</h2>
+</header>
+<!---------------|Main Content Section|------------->
+<div class="container py-4">
+    <div class="analytics_heading text-center">
+        <h4 class="mb-5">Analytical View</h4>
+    </div>
+    <div class="form">
+     <form action="{{ url_for('plot')}}"method="post" target="_self" >
+        <div class="form_class mb-3">
+            <input type="checkbox" class="switch" id="R2" name="R2" value="R2" size="90">
+            <label for="R2">R2 stage</label>
+            <input type="checkbox" class="switch" id="R3" name="R3" value="R3">
+            <label for="R3"> R3 Stage</label>
+            <input type="checkbox" class="switch" id="R4" name="R4" value="R4">
+            <label for="R4"> R4 Stage</label>
+            <input type="checkbox" class="switch" id="R5" name="R5" value="R5">
+            <label for="R4"> R5 Stage</label>
+        </div>
+      <div class="text-center">
+          <input class="btn" type="submit" value="Plot">
+      </div>
+     </form> 
+    </div>
+</div>
+<!-- graph here -->
+<div class="container mt-3 mb-5">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-12 text-center pb-4">
+      {{ plot_div|safe }}
+      {{ plot_script|safe }}
+    </div>
+  </div>
+</div>
+
+<script>
+const toggleBtn = document.getElementsByClassName('togglebtn')[0]
+const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+toggleBtn.addEventListener('click', () => {
+    navbarLinks.classList.toggle('active')
+})
+</script>   
+</body>
+</html>
